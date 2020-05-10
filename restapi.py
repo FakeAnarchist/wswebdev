@@ -25,8 +25,7 @@ def createEmployee():
         "email": email,
         "phone": phone
     }
-    r=requests.put("http://127.0.0.1:8080/api/tutorial/1.0/employees",employee)
-    print(r)
+    r=requests.post("http://127.0.0.1:8080/api/tutorial/1.0/employees",employee)
     if(r.ok):
         print("employee added")
     else:
