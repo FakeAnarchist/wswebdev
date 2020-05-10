@@ -21,6 +21,11 @@ def start():
             return
         elif(action == "delete"):
             deleteEmployee()
+        elif(action == "status"):
+            statusEmployee()
+        elif(action == "list"):
+            employeeList()
+        
 
 def createEmployee():
     name=input("Insert employee's name: ")
@@ -41,7 +46,6 @@ def createEmployee():
 def deleteEmployee():
     id= input("what is the id of the employee ")
     bang="http://127.0.0.1:8080/api/tutorial/1.0/employees/"+str(id)
-    print (bang)
     r=requests.delete(bang)
     if(r.ok):
         print("employee deleted")
@@ -49,6 +53,23 @@ def deleteEmployee():
         print("error deleting employee")
     return
 
+def statusEmployee():
+    id= input("what is the id of the employee ")
+    bang="http://127.0.0.1:8080/api/tutorial/1.0/employees/"+str(id)
+    r=requests.get(bang)
+    if(r.ok):
+        print(json.loads(r.content))
+    else:
+        print("error viewing employee")
+    return
+
+def employeeList():
+    r=requests.get("http://127.0.0.1:8080/api/tutorial/1.0/employees")
+    if(r.ok):
+        print(json.loads(r.content))
+    else:
+        print("error viewing employee")
+    return
 
 if __name__ == "__main__":
 	start()
