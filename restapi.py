@@ -30,8 +30,9 @@ def start():
 def createEmployee():
     name=input("Insert employee's name: ")
     surname=input("Insert employee's surname: ")
+    id=input("Insert employee's id: ")
     employee={
-        "employeeId": len(jdata),
+        "employeeId": id,
         "firstName": name,
         "lastName": surname,
         "email": email,
