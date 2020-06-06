@@ -21,3 +21,6 @@ docker stop sqlalchemy-orm-psql
 
 # destroy instance
 docker rm sqlalchemy-orm-psql
+
+#set the environment variable manually
+FLASK_APP=microblog.py
