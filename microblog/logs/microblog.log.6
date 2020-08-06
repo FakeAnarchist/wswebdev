@@ -1,5 +1,4 @@
-2020-08-01 10:35:40,617 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:74]
-2020-08-01 10:35:47,066 ERROR: Exception on /index [GET] [in /home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py:1891]
+2020-08-01 10:15:01,208 ERROR: Exception on /explore [GET] [in /home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/vasco/Desktop/wswebdev/microblog/app/main/routes.py", line 44, in index
-    return render_template('index.html', title=_('Home'), form=form,
+  File "/home/vasco/Desktop/wswebdev/microblog/app/main/routes.py", line 59, in explore
+    return render_template('index.html', title=_('Explore'),
   File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
     return _render(
   File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
@@ -37,14 +36,10 @@ Traceback (most recent call last):
     {%- block html %}
   File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
     {% block body -%}
-  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/home/vasco/Desktop/wswebdev/microblog/app/templates/base.html", line 48, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/home/vasco/Desktop/wswebdev/microblog/app/templates/index.html", line 11, in block "app_content"
-    {% include '_post.html' %}
-  File "/home/vasco/Desktop/wswebdev/microblog/app/templates/_post.html", line 4, in top-level template code
-    <a href="{{ url_for('user', username=post.author.username) }}">
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/home/vasco/Desktop/wswebdev/microblog/app/templates/base.html", line 17, in block "navbar"
+    <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
   File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
@@ -55,21 +50,9 @@ Traceback (most recent call last):
     rv = url_adapter.build(
   File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['username']. Did you mean 'main.user' instead?
-2020-08-01 10:37:09,556 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:74]
-2020-08-01 10:44:20,170 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:74]
-2020-08-01 10:45:02,523 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:74]
-2020-08-01 10:59:09,664 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:74]
-2020-08-01 12:02:35,519 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:79]
-2020-08-01 13:10:46,368 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:79]
-2020-08-01 13:18:12,192 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:79]
-2020-08-01 13:34:50,207 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:79]
-2020-08-06 00:55:02,158 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:79]
-2020-08-06 01:05:09,813 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:79]
-2020-08-06 01:06:51,234 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:79]
-2020-08-06 01:08:13,154 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:77]
-2020-08-06 01:11:40,246 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:77]
-2020-08-06 01:11:42,644 ERROR: Exception on /search [GET] [in /home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py:1891]
+werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2020-08-01 10:18:18,157 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:74]
+2020-08-01 10:18:20,574 ERROR: Exception on /explore [GET] [in /home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -85,20 +68,41 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/vasco/Desktop/wswebdev/microblog/app/main/routes.py", line 152, in search
-    posts, total = Post.search(g.search_form.q.data, page,
-  File "/home/vasco/Desktop/wswebdev/microblog/app/models.py", line 15, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/home/vasco/Desktop/wswebdev/microblog/app/search.py", line 22, in query_index
-    search = current_app.elasticsearch.search(
-  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/client/utils.py", line 139, in _wrapped
-    return func(*args, params=params, headers=headers, **kwargs)
-  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/client/__init__.py", line 1479, in search
-    return self.transport.perform_request(
-  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/transport.py", line 345, in perform_request
-    status, headers_response, data = connection.perform_request(
-  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/connection/http_urllib3.py", line 256, in perform_request
-    self._raise_error(response.status, raw_data)
-  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/connection/base.py", line 287, in _raise_error
-    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(
-elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
+  File "/home/vasco/Desktop/wswebdev/microblog/app/main/routes.py", line 59, in explore
+    return render_template('index.html', title=_('Explore'),
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/vasco/Desktop/wswebdev/microblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/vasco/Desktop/wswebdev/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/home/vasco/Desktop/wswebdev/microblog/app/templates/base.html", line 17, in block "navbar"
+    <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2020-08-01 10:18:42,150 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:74]

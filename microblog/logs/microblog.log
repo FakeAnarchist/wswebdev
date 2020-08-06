@@ -1,25 +1,4 @@
-2020-06-13 16:18:47,761 ERROR: Exception on /reset_password_request [POST] [in /home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_mail.py", line 492, in send
-    message.send(connection)
-  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_mail.py", line 427, in send
-    connection.send(self)
-  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_mail.py", line 188, in send
-    self.host.sendmail(sanitize_address(envelope_from or message.sender),
-  File "/usr/lib/python3.8/smtplib.py", line 856, in sendmail
-    self.ehlo_or_helo_if_needed()
-  File "/usr/lib/python3.8/smtplib.py", line 604, in ehlo_or_helo_if_needed
-    if not (200 <= self.ehlo()[0] <= 299):
-  File "/usr/lib/python3.8/smtplib.py", line 444, in ehlo
-    self.putcmd(self.ehlo_msg, name or self.local_hostname)
-  File "/usr/lib/python3.8/smtplib.py", line 371, in putcmd
-    self.send(str)
-  File "/usr/lib/python3.8/smtplib.py", line 363, in send
-    raise SMTPServerDisconnected('please run connect() first')
-smtplib.SMTPServerDisconnected: please run connect() first
-
-During handling of the above exception, another exception occurred:
-
+2020-08-06 01:18:22,750 ERROR: Exception on /search [GET] [in /home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -33,48 +12,56 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/vasco/Desktop/wswebdev/microblog/app/routes.py", line 167, in reset_password_request
-    send_password_reset_email(user)
-  File "/home/vasco/Desktop/wswebdev/microblog/app/email.py", line 14, in send_password_reset_email
-    send_email('[Microblog] Reset Your Password',
-  File "/home/vasco/Desktop/wswebdev/microblog/app/email.py", line 9, in send_email
-    mail.send(msg)
-  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_mail.py", line 492, in send
-    message.send(connection)
-  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_mail.py", line 152, in __exit__
-    self.host.quit()
-  File "/usr/lib/python3.8/smtplib.py", line 988, in quit
-    res = self.docmd("quit")
-  File "/usr/lib/python3.8/smtplib.py", line 424, in docmd
-    self.putcmd(cmd, args)
-  File "/usr/lib/python3.8/smtplib.py", line 371, in putcmd
-    self.send(str)
-  File "/usr/lib/python3.8/smtplib.py", line 363, in send
-    raise SMTPServerDisconnected('please run connect() first')
-smtplib.SMTPServerDisconnected: please run connect() first
-2020-06-13 16:23:35,282 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:45]
-2020-06-13 16:29:58,876 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:45]
-2020-06-13 16:31:27,155 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:45]
-2020-06-13 16:44:48,266 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:45]
-2020-06-13 16:46:35,898 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:45]
-2020-07-02 20:28:52,231 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:47]
-2020-07-28 21:19:22,865 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:47]
-2020-07-28 21:26:28,345 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:47]
-2020-07-28 21:28:45,691 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:47]
-2020-07-28 21:29:52,263 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:47]
-2020-07-28 21:31:54,492 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:47]
-2020-07-28 21:40:19,686 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:47]
-2020-07-28 22:07:24,543 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:47]
-2020-07-28 22:08:59,362 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:47]
-2020-07-28 22:10:14,112 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:47]
-2020-07-28 22:11:25,264 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:47]
-2020-07-29 00:39:12,955 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:47]
-2020-07-29 00:41:34,471 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:47]
-2020-07-29 01:09:26,226 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:49]
-2020-07-29 01:10:26,568 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:49]
-2020-07-29 01:25:53,717 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:49]
-2020-07-31 22:31:39,548 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:52]
-2020-07-31 22:56:34,629 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:52]
-2020-07-31 22:57:39,665 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:52]
-2020-07-31 23:14:17,447 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:52]
-2020-07-31 23:20:09,682 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:52]
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/vasco/Desktop/wswebdev/microblog/app/main/routes.py", line 152, in search
+    posts, total = Post.search(g.search_form.q.data, page,
+  File "/home/vasco/Desktop/wswebdev/microblog/app/models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/home/vasco/Desktop/wswebdev/microblog/app/search.py", line 22, in query_index
+    search = current_app.elasticsearch.search(
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/client/utils.py", line 139, in _wrapped
+    return func(*args, params=params, headers=headers, **kwargs)
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/client/__init__.py", line 1479, in search
+    return self.transport.perform_request(
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/transport.py", line 345, in perform_request
+    status, headers_response, data = connection.perform_request(
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/connection/http_urllib3.py", line 256, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/connection/base.py", line 287, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
+2020-08-06 01:29:31,906 INFO: Microblog startup [in /home/vasco/Desktop/wswebdev/microblog/app/__init__.py:77]
+2020-08-06 01:29:35,818 ERROR: Exception on /search [GET] [in /home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/vasco/Desktop/wswebdev/microblog/app/main/routes.py", line 152, in search
+    posts, total = Post.search(g.search_form.q.data, page,
+  File "/home/vasco/Desktop/wswebdev/microblog/app/models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/home/vasco/Desktop/wswebdev/microblog/app/search.py", line 22, in query_index
+    search = current_app.elasticsearch.search(
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/client/utils.py", line 139, in _wrapped
+    return func(*args, params=params, headers=headers, **kwargs)
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/client/__init__.py", line 1479, in search
+    return self.transport.perform_request(
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/transport.py", line 345, in perform_request
+    status, headers_response, data = connection.perform_request(
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/connection/http_urllib3.py", line 256, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/home/vasco/Desktop/wswebdev/tutorial-env/lib/python3.8/site-packages/elasticsearch/connection/base.py", line 287, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
